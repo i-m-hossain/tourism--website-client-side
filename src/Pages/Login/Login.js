@@ -6,7 +6,7 @@ const Login = () => {
     const { signInUsingGoogle} = useFirebase()
     const history = useHistory()
     const location = useLocation()
-    const url = location.state.from
+    const url = location.state?.from
     console.log(url);
     const handleSignIn =() =>{
         signInUsingGoogle()
