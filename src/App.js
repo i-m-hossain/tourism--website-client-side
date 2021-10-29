@@ -8,6 +8,7 @@ import MyOrders from './Pages/MyOrders/MyOrders';
 import ManageOrders from './Pages/ManageOrders/ManageOrders';
 import Login from './Pages/Login/Login';
 import AuthProvider from './Pages/Context/AuthProvider';
+import PrivateRoute from './Pages/PrivateRoute/PrivateRoute';
 function App() {
   return (
     <div className="App">
@@ -21,12 +22,12 @@ function App() {
             <Route path="/services/add">
               <AddService></AddService>
             </Route>
-            <Route exact path="/my-orders">
+            <PrivateRoute exact path="/my-orders">
               <MyOrders></MyOrders>
-            </Route>
-            <Route exact path="/manage-orders">
+            </PrivateRoute>
+            <PrivateRoute exact path="/manage-orders">
               <ManageOrders></ManageOrders>
-            </Route>
+            </PrivateRoute>
             <Route exact path="/login">
               <Login></Login>
             </Route>
