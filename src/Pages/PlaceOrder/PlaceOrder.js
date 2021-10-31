@@ -16,7 +16,7 @@ const PlaceOrder = () => {
             .then(res => setService(res.data))
     }, [])
     const onSubmit = data => {
-        axios.post("http://localhost:5000/order/add", {userDetails: data, service})
+        axios.post("http://localhost:5000/order/add", {userDetails: data, service, status: 0})
         .then(res=> {
             if (res.data.insertedId) {
                 alert("A new service is added");

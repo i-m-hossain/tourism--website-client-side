@@ -1,10 +1,12 @@
 
 
 import axios from 'axios';
-import { Table, Button } from 'react-bootstrap';
+import { Table} from 'react-bootstrap';
 import useOrders from '../../hooks/useOrders';
+import OrderItem from './OrderItem';
 const ManageOrders = () => {
     const [orders, setOrders] = useOrders()
+    
     const handleDeleteOrder = (id) => {
         const confirm = window.confirm('Are you sure want to delete?');
         if (confirm) {
@@ -19,36 +21,33 @@ const ManageOrders = () => {
                 })
         }
     }
+    
 
     return (
         <div className="m-5">
-           {
+            {
                 orders.length > 0 ? <Table striped bordered hover size="sm" >
                     <thead>
                         <tr>
                             <th>#</th>
                             <th>Title</th>
                             <th>Image</th>
+                            <th>status</th>
                             <th> Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         {
-                            orders.map((order, index) => <tr key={order._id}>
-                                <td>{index + 1}</td>
-                                <td>{order.service.title}</td>
-                                <td><img src={order.service.img} height="60px" width="60" alt="" /></td>
-                                <td><Button variant="danger" onClick={() => handleDeleteOrder(order._id)}>Delete</Button></td>
-                            </tr>)
+                            orders.map((order, index) => <OrderItem order={order} index={index} key={order._id} handleDeleteOrder={handleDeleteOrder}></OrderItem>)
 
                         }
 
-                    </tbody>
+                </tbody>
                 </Table>
                 :
-                <h4>Orders not found</h4>
+<h4>Orders not found</h4>
            }
-        </div>
+        </div >
     );
 };
 
