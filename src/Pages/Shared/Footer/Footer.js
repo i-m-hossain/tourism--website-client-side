@@ -4,7 +4,7 @@ import logo from '../../../images/bottom-logo.png'
 
 const Footer = () => {
     return (
-        <div className="">
+        <div className="px-2 mx-1">
             <Row className="bg-dark text-light p-5" >
                 <Col xs={6} md={4}>
                     <div>
