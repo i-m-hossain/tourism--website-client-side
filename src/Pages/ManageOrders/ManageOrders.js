@@ -21,7 +21,7 @@ const ManageOrders = () => {
                 })
         }
     }
-
+    console.log(orders);
 
     return (
         <div className="m-5">

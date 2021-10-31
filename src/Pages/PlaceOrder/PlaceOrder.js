@@ -19,7 +19,7 @@ const PlaceOrder = () => {
         axios.post("https://cryptic-beach-46798.herokuapp.com/order/add", {userDetails: data, service, status: 0})
         .then(res=> {
             if (res.data.insertedId) {
-                alert("A new service is added");
+                alert("Your order is placed");
                 reset()
             }
         })
@@ -50,8 +50,10 @@ const PlaceOrder = () => {
                             <input defaultValue={user.displayName} {...register("name", { required: true, maxLength: 20 })} className="p-2 mb-2" />
                             <input defaultValue={user.email} {...register("email", { required: true })} className="p-2 mb-2"/>
                             <input {...register("address", { required: true })} placeholder="your address" className="p-2 mb-2"/>
-                            <input  {...register("phone")} placeholder="your phone number" className="p-2 mb-2" />
-                            <input type="submit" className="p-2 mb-2"/>
+                            <input type="date" {...register("date", { required: true })}  className="p-2 mb-2"/>
+                            
+                            <input type="number" {...register("phone")} placeholder="your phone number" className="p-2 mb-2" />
+                            <input type="submit" value="Place Order" className="p-2 mb-2"/>
                         </form>
                     </div>
 

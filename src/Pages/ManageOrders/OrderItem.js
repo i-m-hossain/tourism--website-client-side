@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import { Button, Spinner } from 'react-bootstrap';
 
+
 const OrderItem = ({ order, index, handleDeleteOrder }) => {
     const [status, setStatus] = useState(order.status)
     const [isLoading, setIsLoading] = useState(false)
@@ -22,6 +23,7 @@ const OrderItem = ({ order, index, handleDeleteOrder }) => {
         <tr>
             <td>{index + 1}</td>
             <td>{order.service.title}</td>
+            
             <td><img src={order.service.img} height="60px" width="60" alt="" /></td>
             <td>
                 <Button variant="warning" onClick={() => handleUpdateOrderStatus(order._id)}>
