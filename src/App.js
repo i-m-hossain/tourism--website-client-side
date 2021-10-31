@@ -10,6 +10,8 @@ import Login from './Pages/Login/Login';
 import AuthProvider from './Pages/Context/AuthProvider';
 import PrivateRoute from './Pages/PrivateRoute/PrivateRoute';
 import PlaceOrder from './Pages/PlaceOrder/PlaceOrder';
+import ManageService from './Pages/ManageService/ManageService';
+import CreateMember from './Pages/Home/Team/CreateMember';
 function App() {
   return (
     <div className="App">
@@ -28,6 +30,12 @@ function App() {
             </PrivateRoute>
             <PrivateRoute  path="/manage-orders">
               <ManageOrders></ManageOrders>
+            </PrivateRoute>
+            <PrivateRoute  path="/manage-service">
+              <ManageService></ManageService>
+            </PrivateRoute>
+            <PrivateRoute  path="/create-member">
+              <CreateMember></CreateMember>
             </PrivateRoute>
             <PrivateRoute  path="/place-order/:id">
               <PlaceOrder></PlaceOrder>

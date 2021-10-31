@@ -1,12 +1,12 @@
 
 
 import axios from 'axios';
-import { Table} from 'react-bootstrap';
+import { Table } from 'react-bootstrap';
 import useOrders from '../../hooks/useOrders';
 import OrderItem from './OrderItem';
 const ManageOrders = () => {
     const [orders, setOrders] = useOrders()
-    
+
     const handleDeleteOrder = (id) => {
         const confirm = window.confirm('Are you sure want to delete?');
         if (confirm) {
@@ -21,7 +21,7 @@ const ManageOrders = () => {
                 })
         }
     }
-    
+
 
     return (
         <div className="m-5">
@@ -42,11 +42,11 @@ const ManageOrders = () => {
 
                         }
 
-                </tbody>
+                    </tbody>
                 </Table>
-                :
-<h4>Orders not found</h4>
-           }
+                    :
+                    <h4>No Order found</h4>
+            }
         </div >
     );
 };

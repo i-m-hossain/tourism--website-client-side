@@ -10,7 +10,7 @@ const Header = () => {
             <Container>
                 <Navbar.Brand as={Link} to="/">Happy events</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                <Navbar.Collapse id="responsive-navbar-nav">
+                <Navbar.Collapse id="responsive-navbar-nav" >
                     {
                         user.email && <Nav className="ms-auto">
                             
@@ -18,12 +18,15 @@ const Header = () => {
                             <NavDropdown title={user?.displayName} id="collasible-nav-dropdown">
                                 <NavDropdown.Item as={Link} to="/my-orders">My Orders</NavDropdown.Item>
                                 <NavDropdown.Item as={Link} to="/manage-orders">Manage All Orders</NavDropdown.Item>
+                                
                                 <NavDropdown.Item as={Link} to="/services/add">Add A New Service</NavDropdown.Item>
+                                <NavDropdown.Item as={Link} to="/manage-service">Manage services</NavDropdown.Item>
+                                <NavDropdown.Item as={Link} to="/create-member">Create member</NavDropdown.Item>
                             </NavDropdown>
 
                         </Nav>
                     }
-                    <Nav>
+                    <Nav className={!user.email ? 'ms-auto' :''}>
                         {
                             !user.email ?
                                 <Nav.Link href="/login">Login</Nav.Link> :
