@@ -6,7 +6,7 @@ import Member from './Member';
 const Team = () => {
     const [members, setMembers] = useState([])
     useEffect(()=>{
-        axios.get('http://localhost:5000/members')
+        axios.get('https://cryptic-beach-46798.herokuapp.com/members')
         .then(res => setMembers(res.data))
     }, [])
     return (

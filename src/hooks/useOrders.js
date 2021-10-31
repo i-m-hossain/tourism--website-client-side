@@ -3,7 +3,7 @@ import  { useEffect, useState } from 'react';
 const useOrders =() =>{
     const [orders, setOrders] = useState([])
     useEffect(() => {
-        axios.get(`http://localhost:5000/orders`)
+        axios.get(`https://cryptic-beach-46798.herokuapp.com/orders`)
             .then(res => setOrders(res.data))
     }, [])
     return [orders, setOrders]

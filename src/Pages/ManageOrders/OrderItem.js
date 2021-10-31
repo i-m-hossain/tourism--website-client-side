@@ -8,7 +8,7 @@ const OrderItem = ({ order, index, handleDeleteOrder }) => {
     console.log('initial status', status);
     const handleUpdateOrderStatus = (id) => {
         setIsLoading(true)
-        axios.put(`http://localhost:5000/orders/update/${id}`, { status: !status })
+        axios.put(`https://cryptic-beach-46798.herokuapp.com/orders/update/${id}`, { status: !status })
             .then(res => {
                 console.log(res.data);
                 console.log('final status', status);

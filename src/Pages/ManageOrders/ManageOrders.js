@@ -10,7 +10,7 @@ const ManageOrders = () => {
     const handleDeleteOrder = (id) => {
         const confirm = window.confirm('Are you sure want to delete?');
         if (confirm) {
-            return axios.delete(`http://localhost:5000/orders/${id}`)
+            return axios.delete(`https://cryptic-beach-46798.herokuapp.com/orders/${id}`)
                 .then(res => {
                     if (res.data.deletedCount > 0) {
                         const restOrders = orders.filter(order => order._id !== id)
