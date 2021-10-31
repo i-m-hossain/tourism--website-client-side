@@ -9,13 +9,21 @@ import useCart from '../../hooks/useCart';
 const PlaceOrder = () => {
     const { user } = useAuth()
     const [service, setService] = useState({})
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit,reset } = useForm();
     const { id } = useParams()
     useEffect(() => {
         axios.get(`https://cryptic-beach-46798.herokuapp.com/services/${id}`)
             .then(res => setService(res.data))
     }, [])
-    const onSubmit = data => console.log(data);
+    const onSubmit = data => {
+        axios.post("http://localhost:5000/order/add", {userDetails: data, service})
+        .then(res=> {
+            if (res.data.insertedId) {
+                alert("A new service is added");
+                reset()
+            }
+        })
+    };
     return (
         <div>
             <h2>Place Order </h2>
