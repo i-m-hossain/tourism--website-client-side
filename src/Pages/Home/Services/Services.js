@@ -22,8 +22,8 @@ const Services = () => {
         history.push(`/place-order/${service._id}`)
     };
     return (
-        <Container >
-            <h2>Services</h2>
+        <Container className="mt-5">
+            <h2 className="mb-4">Services</h2>
             {
                 !isLoading ?
                     <Row xs={1} md={3} className="g-4">

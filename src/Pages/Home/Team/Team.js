@@ -10,9 +10,9 @@ const Team = () => {
         .then(res => setMembers(res.data))
     }, [])
     return (
-        <div>
-            <h2>Our creative team</h2>
-            <Row sm={2} md={4} className="m-5">
+        <div className="mt-5">
+            <h2 className="mb-4">Our creative team</h2>
+            <Row sm={2} md={4} className="mx-5">
                {
                    members.map(member => <Member member={member} key={member._id}></Member>)
                }

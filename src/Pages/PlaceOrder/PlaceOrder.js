@@ -16,7 +16,7 @@ const PlaceOrder = () => {
             .then(res => setService(res.data))
     }, [])
     const onSubmit = data => {
-        axios.post("http://localhost:5000/order/add", {userDetails: data, service, status: 0})
+        axios.post("https://cryptic-beach-46798.herokuapp.com/order/add", {userDetails: data, service, status: 0})
         .then(res=> {
             if (res.data.insertedId) {
                 alert("A new service is added");
@@ -25,8 +25,8 @@ const PlaceOrder = () => {
         })
     };
     return (
-        <div>
-            <h2>Place Order </h2>
+        <div className="m-5">
+            <h2 className="mb-5">Place Order </h2>
             <Row>
                 <Col>
 

@@ -2,7 +2,7 @@ import React from 'react';
 
 const Contact = () => {
     return (
-        <div className="bg-light p-4">
+        <div className="bg-light p-4 mt-5">
             <h2 className="mb-4">Let’s Get it Started!</h2>
             <form className="d-flex flex-column justify-content-center align-items-center ">
                 <div className="d-flex justify-content-center">

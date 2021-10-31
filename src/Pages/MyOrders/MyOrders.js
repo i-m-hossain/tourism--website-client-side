@@ -9,7 +9,7 @@ const MyOrders = () => {
     const [orders, setOrders] = useState([])
     const [myOrders, setMyOrders] = useState([])
     useEffect(() => {
-        axios.get('http://localhost:5000/orders')
+        axios.get('https://cryptic-beach-46798.herokuapp.com/orders')
             .then(res => {
                 setOrders(res.data)
             })
@@ -21,7 +21,7 @@ const MyOrders = () => {
     const handleDelete = (id) => {
         const confirm = window.confirm('Are you sure want to delete?');
         if (confirm) {
-            axios.delete(`http://localhost:5000/orders/${id}`)
+            axios.delete(`https://cryptic-beach-46798.herokuapp.com/orders/${id}`)
                 .then(res => {
                     if (res.data.deletedCount > 0) {
 
@@ -36,7 +36,7 @@ const MyOrders = () => {
     }
 
     return (
-        <div>
+        <div className="m-5 p-5">
             {
                 myOrders.length > 0
                     ?
