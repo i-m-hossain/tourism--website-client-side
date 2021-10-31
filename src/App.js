@@ -9,6 +9,7 @@ import ManageOrders from './Pages/ManageOrders/ManageOrders';
 import Login from './Pages/Login/Login';
 import AuthProvider from './Pages/Context/AuthProvider';
 import PrivateRoute from './Pages/PrivateRoute/PrivateRoute';
+import PlaceOrder from './Pages/PlaceOrder/PlaceOrder';
 function App() {
   return (
     <div className="App">
@@ -22,11 +23,14 @@ function App() {
             <Route path="/services/add">
               <AddService></AddService>
             </Route>
-            <PrivateRoute exact path="/my-orders">
+            <PrivateRoute  path="/my-orders">
               <MyOrders></MyOrders>
             </PrivateRoute>
-            <PrivateRoute exact path="/manage-orders">
+            <PrivateRoute  path="/manage-orders">
               <ManageOrders></ManageOrders>
+            </PrivateRoute>
+            <PrivateRoute  path="/place-order/:id">
+              <PlaceOrder></PlaceOrder>
             </PrivateRoute>
             <Route exact path="/login">
               <Login></Login>

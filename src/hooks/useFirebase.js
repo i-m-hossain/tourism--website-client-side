@@ -4,7 +4,6 @@ import { useState } from "react";
 import initAuth from "../Firebase/initAuth";
 initAuth();
 const useFirebase = () => {
-
     const [user, setUser] = useState({})
     const [isLoading, setIsLoading] = useState(true)
     const provider = new GoogleAuthProvider();
@@ -22,7 +21,7 @@ const useFirebase = () => {
                 setUser(user)
                 setIsLoading(false)
             } else {
-
+                console.log('user signed out')
             }
         })
 
