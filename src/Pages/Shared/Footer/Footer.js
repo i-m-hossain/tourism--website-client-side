@@ -4,8 +4,8 @@ import logo from '../../../images/bottom-logo.png'
 
 const Footer = () => {
     return (
-        <div>
-            <Row className="bg-dark text-light" >
+        <div className="">
+            <Row className="bg-dark text-light p-5" >
                 <Col xs={6} md={4}>
                     <div>
                         <img src={logo} alt="" />
@@ -14,12 +14,14 @@ const Footer = () => {
                 </Col>
                 <Col xs={3} md={4}>
                     <h3>USEFUL LINKS</h3>
-                    <li>My Orders</li>
-                    <li>Manage All Orders</li>
+                    <div className="ms-5 p-5 d-flex flex-column align-items-start">
+                        <li >My Orders</li>
+                        <li>Manage All Orders</li>
+                    </div>
                 </Col>
                 <Col xs={3} md={4}>
                     <h3>CONTACT INFO</h3>
-                    <div>
+                    <div className="ms-5 p-5 d-flex flex-column align-items-start">
                         <div>
                             <p>
                                 San Francisco, CA 94102, US
